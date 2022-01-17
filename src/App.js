@@ -8,7 +8,11 @@ import firebase from './FirebaseConfig'
 function App() {
   return (
     <div className="App">
-      <h1>Firebase Recipe</h1>
+      <div className='title-row'>
+        <div className='title'>
+          <h1>Firebase Recipe</h1>
+        </div>
+      </div>
     </div>
   );
 }
