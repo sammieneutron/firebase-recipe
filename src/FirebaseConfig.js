@@ -1,4 +1,9 @@
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+// eslint-disable-next-line no-unused-vars
 import { initializeApp } from "firebase/app";
+// eslint-disable-next-line no-unused-vars
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -11,13 +16,11 @@ const firebaseConfig = {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 }
 
-// if (!firebase.apps.length) {
-//     firebase.initializeApp(config)
-// }
+// Use this to initialize the firebase App
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// eslint-disable-next-line no-unused-vars
-const analytics = getAnalytics(app);
+// Use these for db & auth
+export const db = firebaseApp.firestore();
+// export const auth = firebase.auth();
 
-export default firebaseConfig
+export default firebase;
